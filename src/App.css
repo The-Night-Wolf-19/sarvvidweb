@@ -1,9 +1,31 @@
+:root {
+  --primary-color: #00b3ff;
+  --secondary-color: #05e395;
+  --tertiary-color: black;
+  /* --font-type: Poppins;
+  --default-font-color: #2e266f; */
+}
 .App {
   text-align: center;
+  height: 100vh;
+  align-items: center;
+  /* background-color: var(--tertiary-color); */
+  width: 100vw;
+  background-color: #005288;
+  /* background-color: var(--secondary-color); */
 }
 
 .hv-center {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.Dashboard {
+  height: 100%;
+  width: 100%;
+  background-color: var(--secondary-color);
+
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
 }

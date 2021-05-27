@@ -1,0 +1,26 @@
+.createNewModal {
+  position: fixed;
+  bottom: 5%;
+  right: 30%;
+  color: #005288;
+  width: 30%;
+  max-width: 30%;
+  max-height: 33%;
+  overflow: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.createNewModal::-webkit-scrollbar {
+  display: none;
+}
+.uploadingDiv {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+.uploadingFileNameDiv {
+  width: 70%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}

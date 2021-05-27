@@ -1,0 +1,233 @@
+.rightPane {
+  width: 25%;
+  height: 100%;
+  /* border: 1px solid white; */
+  /* background-color: #343951; */
+  background-color: var(--primary-color);
+  /* background-color: black; */
+  /* color: #d0d6db; */
+  color: white;
+  padding-left: 2%;
+  padding-right: 2%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  cursor: default;
+  overflow: visible;
+}
+.rightPane_user {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 20px;
+}
+
+/* .bell_icon:hover {
+  background-color: white;
+  color: #343951;
+}
+.settings_icon:hover {
+  background-color: white;
+  color: #343951;
+} */
+.user_circle {
+  position: relative;
+  top: 16%;
+  /* margin-right: 0.5%; */
+}
+.user_info:hover {
+  background-color: #005288;
+  color: white;
+  padding: 1%;
+  /* padding-right: 3%; */
+  border-radius: 10px;
+}
+/* .user_logoutDiv{
+
+} */
+/* .logout_text{
+
+} */
+.user_logout {
+  position: relative;
+  top: 16%;
+}
+.user_logoutDiv:hover {
+  /* position: relative; */
+  background-color: #005288;
+  /* color: #343951; */
+  color: white;
+  /* box-shadow: 5px 5px 5px 5px solid #0f0; */
+  padding: 1%;
+  /* padding-right: 3%; */
+  border-radius: 10px;
+}
+.storage_detail_heading {
+  text-align: left;
+}
+.storage_total {
+  /* position: absolute;
+  top: 28.5%; */
+  font-size: 24px;
+  /* right: 15.5%; */
+  text-align: center;
+  opacity: 0.8;
+  z-index: 2;
+  position: relative;
+  top: -140px;
+  left: 1%;
+}
+.storage_detail_desc {
+  position: relative;
+  top: -50px;
+  left: 1.5%;
+  z-index: 2;
+  position: relative;
+  font-size: 12px;
+  text-align: center;
+  opacity: 0.8;
+}
+
+.storage_button {
+  width: 50%;
+  background: none;
+  border: 2px solid #4dc9ff;
+  color: #ecfaff;
+  height: 60px;
+  font-size: 20px;
+  font-weight: 500;
+  transition-duration: 0.5s;
+  margin-top: 5%;
+  /* z-index: 2; */
+  /* position: absolute;
+  bottom: 2%; */
+}
+.storage_button:hover {
+  background-color: #05e395;
+  color: #fff;
+}
+
+.storage_button:focus {
+  outline: none;
+}
+
+.storage_used {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.upgrade_modal {
+  overflow: scroll;
+  /* border-radius: 2%; */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.upgrade_modal::-webkit-scrollbar {
+  display: none;
+}
+
+.div_upgrade_heading {
+  height: min-content;
+  margin-bottom: 2%;
+  cursor: default;
+}
+.upgradeStorageHeading {
+  color: #00b3ff;
+  /* color: #3c4043; */
+}
+.upgrade_plans_div {
+  height: 90%;
+  display: flex;
+  /* padding: 5%; */
+  flex-direction: row;
+  overflow: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.upgrade_plans_div::-webkit-scrollbar {
+  display: none;
+}
+.upgrade_plan_div {
+  width: 27%;
+  padding-top: 3%;
+  padding-bottom: 3%;
+  padding-right: 1.5%;
+  padding-left: 1.5%;
+  /* border: 1px solid #3c4043; */
+  /* background-color: #005288; */
+  border-radius: 8px;
+  /* box-shadow: 0 0 10px rgb(0, 195, 255); */
+  /* box-shadow: 0 0 20px rgb(235, 235, 236); */
+  box-shadow: 0 1px 10px rgb(60 64 67 / 30%);
+  height: 85%;
+  margin: 3%;
+  color: #3c4043;
+  letter-spacing: 0.02em;
+}
+/* .upgrade_plan_div:hover {
+  box-shadow: 0 1px 10px rgb(0 195 255 / 30%);
+  box-shadow: 0 1px 10px rgb(5 227 149 / 30%);
+} */
+.upgrade_plan_top {
+  height: 56.5%;
+}
+.upgrade_plan_recommendation {
+  font-size: 120%;
+}
+.upgrade_plan_storage {
+  font-size: 220%;
+  color: #3c4043;
+  /* opacity: 0.7; */
+}
+
+.upgrade_plan_button {
+  background: none;
+  outline: none;
+  border: 1px solid #dadce0;
+  width: 60%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  border-radius: 4px;
+  font-size: 120%;
+  transition-duration: 0.4s;
+  /* letter-spacing: 0.0107142857em; */
+  letter-spacing: 0.02em;
+  color: #005288;
+}
+.upgrade_plan_button:hover {
+  cursor: pointer;
+  background-color: #f6fafe;
+  /* color: white; */
+}
+.upgrade_plan_button:disabled {
+  pointer-events: none;
+  cursor: default;
+  color: #3c4043;
+}
+.upgrade_plan_button:focus {
+  outline: none;
+}
+.upgrade_plan_bottom {
+  height: 36.5%;
+  text-align: left;
+  /* display: flex;
+  flex-direction: column;
+  justify-content: space-evenly; */
+}
+.upgrade_plan_description {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  margin-bottom: 5%;
+  /* justify-content: space-evenly; */
+}
+.upgrade_plan_tick {
+  margin-left: 8%;
+  margin-right: 4%;
+  color: #05e395;
+}
+.upgrade_plan_info {
+  color: #3c4043;
+}
