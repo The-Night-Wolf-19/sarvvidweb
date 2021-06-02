@@ -9,6 +9,7 @@
   color: white !important;
   cursor: default;
   /* transition-duration: 0.3s; */
+  /* overflow: hidden; */
 }
 
 .leftPane {
@@ -28,17 +29,37 @@
   flex-direction: column;
   justify-content: space-around; */
   transition-duration: 0.4s;
+  /* overflow: hidden; */
 }
 .leftPane_folders {
   max-height: 150px;
   /* height: 150px; */
   overflow: scroll;
+  /* overflow-x: hidden; */
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
 .leftPane_folders::-webkit-scrollbar {
   display: none;
 }
+/* .leftPane_folders::-webkit-scrollbar {
+  width: 10px;
+
+
+}
+.leftPane_folders::-webkit-scrollbar-track {
+  background: #3f51b5;
+  border-radius: 5px;
+  margin-right: 2%;
+}
+.leftPane_folders::-webkit-scrollbar-thumb {
+  background: #05e395;
+  border-radius: 5px;
+  margin-right: 2%;
+}
+.leftPane_folders::-webkit-scrollbar-thumb:hover {
+  background: #0f0;
+} */
 .leftPane_short {
   width: 5%;
   height: 100%;
@@ -79,12 +100,12 @@
 .leftPane_new {
   /* position: absolute; */
   /* bottom: 25%; */
-  position: relative;
-  top: 5%;
+  position: absolute;
+  bottom: 20%;
 }
 .leftPane_new_short {
   position: absolute;
-  bottom: 25%;
+  bottom: 20%;
   /* position: relative;
   top: 5%; */
 }
@@ -95,4 +116,64 @@
 }
 .home_link:hover {
   opacity: 1;
+}
+.FileRequest_modal {
+  overflow: scroll;
+  /* border-radius: 2%; */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.FileRequest_modal::-webkit-scrollbar {
+  display: none;
+}
+.div_FileRequest_heading {
+  height: min-content;
+  margin-bottom: 2%;
+  cursor: default;
+}
+.FileRequestHeading {
+  color: #00b3ff;
+  /* color: #3c4043; */
+}
+.FileRequestBody {
+  text-align: left;
+  color: #3c4043;
+  letter-spacing: 0.02em;
+}
+.FileRequestInstruction {
+  font-size: 135%;
+  margin-bottom: 4%;
+}
+.FileHash_text {
+  width: 100% !important;
+}
+.FileRequest_button {
+  background: #00b3ff;
+  outline: none;
+  margin-top: 2%;
+  border: 1px solid #dadce0;
+  width: 20%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  border-radius: 4px;
+  font-size: 120%;
+  transition-duration: 0.4s;
+  /* letter-spacing: 0.0107142857em; */
+  letter-spacing: 0.02em;
+  color: white;
+  position: absolute;
+  right: 4%;
+}
+.FileRequest_button:hover {
+  cursor: pointer;
+  /* background-color: #f6fafe; */
+  /* color: white; */
+}
+/* .upgrade_plan_button:disabled {
+  pointer-events: none;
+  cursor: default;
+  color: #3c4043;
+} */
+.FileRequest_button:focus {
+  outline: none;
 }

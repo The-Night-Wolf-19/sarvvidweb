@@ -8,6 +8,8 @@ import {
 import "./QRC.css";
 import CloseIcon from "@material-ui/icons/Close";
 import axios from "axios";
+import { connect } from "react-redux";
+import { setEntry } from "../../../actions/fileSystem";
 import md5 from "md5";
 const crypto = require("crypto");
 const platform = require("platform");
@@ -30,7 +32,7 @@ const QRC = (props) => {
     piid: "",
     successMessage: null,
   });
-  setInterval(() => {
+  const loginVar = setInterval(() => {
     axios
       .post(`http://103.155.73.35:1200/barcodeweb/?barcodehash=${Hash}`, {
         Accept: "application/json, text/plain, */*",
@@ -74,41 +76,58 @@ const QRC = (props) => {
           }
           console.log(new_data);
           localStorage.setItem("fileSystem", JSON.stringify(new_data));
+          props.setEntry(new_data);
           console.log("dfuysdgfuysdgfuysdgfsdfsdyfsyfds HI I am IN");
           setState((prevState) => ({
             ...prevState,
             successMessage: "Login successful. Redirecting to home page..",
           }));
           localStorage.setItem(ACCESS_TOKEN_NAME, 1);
+          clearInterval(loginVar);
           props.updateTitle("Home");
           props.history.push("/");
           // props.showError(null);
-          clearTimeout();
+          // clearTimeout();
         } else {
           console.log("TRYING AGAIN<<<<<<<<<<<<<<");
         }
       });
   }, 3000);
-
   return (
-    <Backdrop style={{ zIndex: "4001", opacity: "1", visibility: "visible" }}>
-      <div className="login_QR">
-        <div className="login_QR_instruction">
-          <h3>To use SarvvidBox on your computer:</h3>
-          <br></br>
-          <ol>
-            <li>Open SarvvidBox on your phone</li>
-            <li>Tap Menu or Settings and select SarvvidBox Web</li>
-            <li>Point your phone to this screen to capture the code</li>
-          </ol>
-        </div>
-        <QRCode value={Hash} size={200} level={"Q"} />
-        <div className="login_QR_close" onClick={props.click}>
-          <CloseIcon fontSize="large" />
-        </div>
+    // <Backdrop style={{ zIndex: "4001", opacity: "1", visibility: "visible" }}>
+    <div className="login_QR">
+      <div className="login_QR_instruction">
+        <h3>To use SarvvidBox on your computer:</h3>
+        <br></br>
+        <ol>
+          <li>Open SarvvidBox on your phone</li>
+          <li>Tap Menu or Settings and select SarvvidBox Web</li>
+          <li>Point your phone to this screen to capture the code</li>
+        </ol>
       </div>
-    </Backdrop>
+      <div className="login_code">
+        <QRCode value={Hash} size={200} level={"Q"} />
+      </div>
+      {/* <div className="login_QR_close" onClick={props.click}>
+        <CloseIcon fontSize="large" />
+      </div> */}
+    </div>
+    // </Backdrop>
   );
 };
+const mapStateToProps = (state, ownProps) => {
+  console.log("initial", state.fileSystem);
+  const fileStructure = localStorage.getItem("fileSystem");
+  // state.fileSystem = JSON.parse(localStorage.getItem("fileSystem"));
+  // console.log("final", state.fileSystem);
+  return {
+    fileStructure,
+  };
+};
+// const mapDispatchToProps =(dispatch)=>{
+//   return{
 
-export default QRC;
+//   }
+// }
+
+export default connect(mapStateToProps, { setEntry })(QRC);

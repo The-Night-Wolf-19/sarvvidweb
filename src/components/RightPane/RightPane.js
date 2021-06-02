@@ -68,29 +68,22 @@ const useUpgradeStyles = makeStyles((theme) => ({
     textAlign: "center",
   },
 }));
-const useUpgradeCounterStyles = makeStyles((theme) => ({
-  root: {
-    "& .MuiTextField-root": {
-      margin: theme.spacing(1),
-      width: "25ch",
-      backgroundColor: "none",
-    },
-  },
-}));
+// const useUpgradeCounterStyles = makeStyles((theme) => ({
+//   root: {
+//     "& .MuiTextField-root": {
+//       margin: theme.spacing(1),
+//       width: "25ch",
+//       backgroundColor: "none",
+//     },
+//   },
+// }));
 const RightPane = (props) => {
   const [openUpgrade, setOpenUpgrade] = useState(false);
-  const [upgradeCounter, setUpgradeCounter] = useState(0);
   const [userAnim, setUserAnim] = useState(true);
   const [LogoutAnim, setLogoutAnim] = useState(true);
-  const [upgradeSlide, setUpgradeSlide] = useState(true);
   const classesUpgrade = useUpgradeStyles();
-  const classesUpgradeCounter = useUpgradeCounterStyles();
   const current_plan = isNaN(props.b) ? 20 : props.b;
-  useEffect(() => {
-    setTimeout(() => {
-      setUpgradeSlide(!upgradeSlide);
-    }, 10000);
-  }, [upgradeSlide]);
+
   let used = isNaN(props.a) ? 100 : (props.a / props.b) * 100;
   let unused = isNaN(props.b) ? 0 : ((props.b - props.a) / props.b) * 100;
   //Logout Functionality Starts
@@ -225,7 +218,7 @@ const RightPane = (props) => {
           open={openUpgrade}
           // open={true}
           onClose={() => {
-            setUpgradeCounter(0);
+            // setUpgradeCounter(0);
             setOpenUpgrade(!openUpgrade);
           }}
           aria-labelledby="simple-modal-title"

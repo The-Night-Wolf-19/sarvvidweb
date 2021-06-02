@@ -1,7 +1,7 @@
-import dummyFileSystem from '../utils/dummyFileSystem';
+import dummyFileSystem from "../utils/dummyFileSystem";
 
-import { ADD_ENTRY, DELETE_ENTRY, FOLDER } from '../utils/constants';
-import { DeleteEntry, AddEntry } from '../utils/fileSystem';
+import { ADD_ENTRY, DELETE_ENTRY, FOLDER, SET_ENTRY } from "../utils/constants";
+import { DeleteEntry, AddEntry, SetEntry } from "../utils/fileSystem";
 
 export default (data = dummyFileSystem, action) => {
   switch (action.type) {
@@ -13,7 +13,9 @@ export default (data = dummyFileSystem, action) => {
     case DELETE_ENTRY: {
       return DeleteEntry(data, action.payload);
     }
-
+    case SET_ENTRY: {
+      return SetEntry(data, action.payload);
+    }
     default:
       return data;
   }

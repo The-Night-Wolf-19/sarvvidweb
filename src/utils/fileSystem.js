@@ -1,10 +1,10 @@
-import md5 from 'md5';
-import { FOLDER, FILE } from './constants';
+import md5 from "md5";
+import { FOLDER, FILE } from "./constants";
 
 const search = (arr, entry) => {
   let no = 0;
 
-  arr[entry.parentID].children.forEach(elementId => {
+  arr[entry.parentID].children.forEach((elementId) => {
     if (
       arr[elementId].name.includes(entry.name) &&
       arr[elementId].type === entry.type
@@ -15,10 +15,12 @@ const search = (arr, entry) => {
   });
   return no;
 };
+export const SetEntry = (data, newFileSystem) => {
+  return { ...newFileSystem };
+};
 
 export const AddEntry = (data, newEntry) => {
   // let no = search(data, newEntry);
- 
 
   return { ...data };
 };
@@ -26,7 +28,7 @@ export const AddEntry = (data, newEntry) => {
 export const DeleteEntry = (data, entryID) => {
   const entry = data[entryID];
   if (entry.type === FOLDER) {
-    entry.children.forEach(id => {
+    entry.children.forEach((id) => {
       DeleteEntry(data, id);
     });
   }
@@ -34,11 +36,11 @@ export const DeleteEntry = (data, entryID) => {
   let index = data[parentID].children.indexOf(entryID);
   if (index !== -1) data[parentID].children.splice(index, 1);
   delete data[entryID];
-  localStorage.setItem('fileSystem', JSON.stringify(data));
+  localStorage.setItem("fileSystem", JSON.stringify(data));
   return { ...data };
 };
 
-const cloneObj = obj => {
+const cloneObj = (obj) => {
   if (Object(obj) !== obj) return obj;
   else if (Array.isArray(obj)) return obj.map(cloneObj);
 
@@ -47,7 +49,7 @@ const cloneObj = obj => {
   );
 };
 
-export const generateTreeFromList = _list => {
+export const generateTreeFromList = (_list) => {
   const root = [];
   let list = cloneObj(_list); // create empty list to hold copy
   Object.keys(list).forEach((nodeID, index) => {
@@ -68,7 +70,7 @@ export const generateTreeFromList = _list => {
 export const showPathEntries = (parentPath, fileSystem) => {
   return fileSystem[md5(parentPath + FOLDER)]
     ? fileSystem[md5(parentPath + FOLDER)].children.map(
-        childrenID => fileSystem[childrenID]
+        (childrenID) => fileSystem[childrenID]
       )
     : [];
 };
@@ -80,7 +82,7 @@ export const entriesAreSame = (x, y) => {
     if (x[p] === null && y[p] !== null) return false;
     if (x[p] === null && y[p] !== null) return false;
   }
-  if (typeof x[p] === 'object') {
+  if (typeof x[p] === "object") {
     if (!entriesAreSame(x[p], y[p])) {
       return false;
     }

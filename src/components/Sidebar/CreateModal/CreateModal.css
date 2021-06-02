@@ -3,10 +3,15 @@
   bottom: 5%;
   right: 30%;
   color: #005288;
+  /* color: white; */
   width: 30%;
   max-width: 30%;
   max-height: 33%;
+  background-color: #7dd8ff;
+  border-radius: 1%;
   overflow: scroll;
+  /* padding-top: 15%; */
+  box-shadow: 0 1px 10px rgb(60 64 67 / 30%);
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
@@ -14,6 +19,8 @@
   display: none;
 }
 .uploadingDiv {
+  margin-top: 1%;
+  margin-bottom: 1%;
   width: 100%;
   display: flex;
   justify-content: space-around;

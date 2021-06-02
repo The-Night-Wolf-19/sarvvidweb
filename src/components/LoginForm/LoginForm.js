@@ -34,7 +34,7 @@ function LoginForm(props) {
   const [err, showerr] = useState(false);
   const [aerr, showautherr] = useState(false);
   const [dis, setdis] = useState(false);
-  const [QR, setQR] = useState(false);
+  // const [QR, setQR] = useState(false);
   const handleChange = (e) => {
     const { id, value } = e.target;
     setState((prevState) => ({
@@ -42,9 +42,9 @@ function LoginForm(props) {
       [id]: value,
     }));
   };
-  const handleQRCode = () => {
-    setQR(!QR);
-  };
+  // const handleQRCode = () => {
+  //   setQR(!QR);
+  // };
   const handleSubmitClick = (e) => {
     e.preventDefault();
     const payload = {
@@ -142,13 +142,13 @@ function LoginForm(props) {
       {/* <img className="loginBg" src={loginbg} alt=""></img> */}
       <div className="loginBgColor"></div>
       <img className="loginLogo" src={sarvvid} alt="Sarvvid AI" />
-      <div className="login_form">
-        <QRC
-          click={handleQRCode}
-          updateTitle={props.updateTitle}
-          history={props.history}
-        />
-      </div>
+      {/* <div className="login_form"> */}
+      <QRC
+        // click={handleQRCode}
+        updateTitle={props.updateTitle}
+        history={props.history}
+      />
+      {/* </div> */}
       {/*  */}
     </div>
   );

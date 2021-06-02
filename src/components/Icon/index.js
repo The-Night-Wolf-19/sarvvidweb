@@ -204,7 +204,7 @@ class Icon extends Component {
                 },
               },
               {
-                info: "Get Info",
+                info: "Share",
                 onClick: () =>
                   this.setState({
                     showInfo: true,

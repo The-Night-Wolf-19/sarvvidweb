@@ -4,14 +4,16 @@ import Header from "./components/Header/Header";
 import LoginForm from "./components/LoginForm/LoginForm";
 import RegistrationForm from "./components/RegistrationForm/RegistrationForm";
 import PrivateRoute from "./utils/PrivateRoute";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+// import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { HashRouter as Router, Switch, Route } from "react-router-dom";
 import AlertComponent from "./components/AlertComponent/AlertComponent";
 import { render } from "react-dom";
 import { Provider } from "react-redux";
 import { createStore } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
 import Icon from "@material-ui/core/Icon";
-import { BrowserRouter } from "react-router-dom";
+// import { BrowserRouter } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 import Sidebar from "./components/Sidebar/index";
 import Card from "./components/Card/Card.js";
 import CardHeader from "./components/Card/CardHeader.js";
@@ -100,7 +102,8 @@ function App() {
   return (
     <Provider store={store}>
       <Router>
-        <BrowserRouter>
+        {/* <BrowserRouter> */}
+        <HashRouter>
           <Fragment>
             <div className="App">
               {/* <div className="container d-flex align-items-center flex-column"> */}
@@ -161,7 +164,8 @@ function App() {
               {/* </div> */}
             </div>
           </Fragment>
-        </BrowserRouter>
+          {/* </BrowserRouter> */}
+        </HashRouter>
       </Router>
     </Provider>
   );
