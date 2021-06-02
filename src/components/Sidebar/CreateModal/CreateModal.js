@@ -102,85 +102,14 @@ const CreateModal = (props) => {
             )}%`}</Typography>
           </Box>
         </Box>
-        {/*  */}
-        {/* <Box display="flex" alignItems="center">
-          <Box width="100%" mr={1}>
-            <LinearProgress
-              variant="determinate"
-              value={
-                (props.files[key].progress * 100) /
-                props.files[key].totalprogress
-              }
-            />
-          </Box>
-          <Box minWidth={35}>
-            <Typography variant="body2" color="textSecondary">
-              {`${Math.round(
-                (props.files[key].progress * 100) /
-                  props.files[key].totalprogress
-              )}%`}
-            </Typography>
-          </Box>
-        </Box> */}
       </div>
     );
   }
   return (
     <div className="createNewModal" onMouseEnter={() => props.hover()}>
       {uploads}
-      {/* <Modal
-        open={_props.open}
-        onClose={() => {
-          _props.closeFn();
-        }}
-        aria-labelledby="simple-modal-title"
-        aria-describedby="simple-modal-description"
-      >
-        <div className={classesCreateNew.paper}>
-          <Container>
-            {loading ? (
-              <div style={{ width: "100%" }}>
-                <Box display="flex" alignItems="center">
-                  <Box width="100%" mr={1}>
-                    <LinearProgress
-                      variant="determinate"
-                      value={(progress * 100) / totalProgress}
-                    />
-                  </Box>
-                  <Box minWidth={35}>
-                    <Typography
-                      variant="body2"
-                      color="textSecondary"
-                    >{`${Math.round(
-                      (progress * 100) / totalProgress
-                    )}%`}</Typography>
-                  </Box>
-                </Box>
-              </div>
-            ) : (
-              " "
-            )}
-          </Container>
-        </div>
-      </Modal> */}
     </div>
   );
 };
-
-// async function myCustomFileGetter(event) {
-//   const files = [];
-//   // Retrieves the files loaded by the drag event or the select event
-//   const fileList = event.dataTransfer
-//     ? event.dataTransfer.files
-//     : event.target.files;
-
-//   for (var i = 0; i < fileList.length; i++) {
-//     const file = fileList.item(i);
-//     files.push(file);
-//   }
-
-//   // files returned from this function will be acceptedFiles
-//   return files;
-// }
 
 export default CreateModal;

@@ -71,7 +71,6 @@ const withModal = (WrappedComponent) => (props) =>
         ? this.props.style
         : {};
       return (
-        // <ModalPositioner>
         <Container
           style={{
             ...style,
@@ -91,7 +90,6 @@ const withModal = (WrappedComponent) => (props) =>
 
           <WrappedComponent {...this.props} />
         </Container>
-        // </ModalPositioner>
       );
     }
   };

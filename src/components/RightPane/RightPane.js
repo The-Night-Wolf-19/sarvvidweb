@@ -113,21 +113,14 @@ const RightPane = (props) => {
     localStorage.removeItem(ACCESS_TOKEN_NAME);
     props.history.push("/login");
   }
-  //Logout Functionality Ends
   return (
     <div className="rightPane">
       <div className="rightPane_user">
-        {/* <div className="user_icons">
-          <i class="fa fa-bell-o bell_icon" aria-hidden="true"></i>
-          &nbsp;&nbsp;
-          <i class="fa fa-cog settings_icon" aria-hidden="true"></i>
-        </div> */}
         <div
           className="user_info"
           onMouseEnter={() => setUserAnim(false)}
           onMouseLeave={() => setUserAnim(true)}
         >
-          {/* <span className="username">{localStorage.getItem("IMEI")}&nbsp;</span> */}
           <span className="username">User&nbsp;</span>
           {userAnim ? (
             <AccountCircleIcon className="user_circle" />
@@ -188,37 +181,10 @@ const RightPane = (props) => {
       <button className="storage_button" onClick={() => setOpenUpgrade(true)}>
         Upgrade Storage
       </button>
-      {/* <div className="storage_upgrade" onClick={() => setOpenUpgrade(true)}>
-        {upgradeSlide ? (
-          <img
-            className="animated_upgrade_icon"
-            width={300}
-            height={310}
-            src={upgradeGif}
-            alt=""
-          />
-        ) : (
-          [
-            <p className="storage_heading storage_heading1">Get more space</p>,
-            <p className="storage_heading">for Files</p>,
-            <p className="storage_detail" style={{ marginTop: "3%" }}>
-              More than 200 Gb for your files
-            </p>,
-            <button
-              className="storage_button"
-              onClick={() => setOpenUpgrade(true)}
-            >
-              Upgrade Storage
-            </button>,
-          ]
-        )}
-      </div> */}
       <div className="Detail-Modal">
         <Modal
           open={openUpgrade}
-          // open={true}
           onClose={() => {
-            // setUpgradeCounter(0);
             setOpenUpgrade(!openUpgrade);
           }}
           aria-labelledby="simple-modal-title"
@@ -262,7 +228,7 @@ const RightPane = (props) => {
                   </div>
                 </div>
               </div>
-              {/* -------------------------------------- */}
+
               <div
                 className="upgrade_plan_div"
                 style={{ border: "5px solid rgb(0, 195, 255)" }}
@@ -317,7 +283,6 @@ const RightPane = (props) => {
                   </div>
                 </div>
               </div>
-              {/* -------------------------------------- */}
               <div className="upgrade_plan_div">
                 <div className="upgrade_plan_top">
                   <p className="upgrade_plan_recommendation">&nbsp;</p>
@@ -365,36 +330,7 @@ const RightPane = (props) => {
                   </div>
                 </div>
               </div>
-              {/* <div className="upgrade_plan_div">
-                <div className="upgrade_plan_top">
-                  <p className="upgrade_plan_recommendation">&nbsp;</p>
-                  <p className="upgrade_plan_storage">20 GB</p>
-                  <p className="upgrade_plan_recommendation">Free</p>
-                  <p>&nbsp;</p>
-                  {current_plan === 20 ? (
-                    <button
-                      type="button"
-                      className="upgrade_plan_button"
-                      disabled={true}
-                    >
-                      Current Plan
-                    </button>
-                  ) : (
-                    <button type="button" className="upgrade_plan_button">
-                      &#8377; 0/month
-                    </button>
-                  )}
-                </div>
-                <hr />
-                <div className="upgrade_plan_bottom">
-                  <p style={{ margin: "0.5%" }}>Base Plan Includes:</p>
-                  <div className="upgrade_plan_description">
-                    <CheckRoundedIcon className="upgrade_plan_tick" />
-                    <span className="upgrade_plan_info">20 GB storage</span>
-                  </div>
-                </div>
-              </div> */}
-              {/* -------------------------------------- */}
+
               <div className="upgrade_plan_div">
                 <div className="upgrade_plan_top">
                   <p className="upgrade_plan_recommendation">&nbsp;</p>

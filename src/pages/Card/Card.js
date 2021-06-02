@@ -44,16 +44,6 @@ class Card extends Component {
             }}
           />
         ))}
-
-        {/* <Add
-          saveEntry={(value) => {
-            console.log(value);
-            this.props.addEntry({
-              ...value,
-            });
-          }}
-          currentpath={this.props.match.url}
-        /> */}
       </div>
     );
   }
@@ -62,12 +52,7 @@ class Card extends Component {
 const mapStateToProps = (state, ownProps) => {
   console.log(ownProps.match.url);
   const path = ownProps.match.url;
-  console.log(
-    state.fileSystem
-    // state.fileSystem[md5(path + FOLDER)].children.map(
-    //   (childrenID) => state.fileSystem[childrenID]
-    // )
-  );
+  console.log(state.fileSystem);
 
   return {
     entry: state.fileSystem[md5(path + FOLDER)]

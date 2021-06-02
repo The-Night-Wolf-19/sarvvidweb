@@ -102,11 +102,9 @@ function App() {
   return (
     <Provider store={store}>
       <Router>
-        {/* <BrowserRouter> */}
         <HashRouter>
           <Fragment>
             <div className="App">
-              {/* <div className="container d-flex align-items-center flex-column"> */}
               <Switch>
                 <Route path="/login" exact={true}>
                   <LoginForm
@@ -115,44 +113,9 @@ function App() {
                   />
                 </Route>
                 <PrivateRoute path="/">
-                  {/* <Header title={title} /> */}
                   <div className="Dashboard">
-                    {/* RIGHT PANE*/}
                     <Route path="*" component={Sidebar} />
-                    {/* <Sidebar /> */}
-                    {/* MIDDLE PANE*/}
-                    {/* <fileChosenContext.Provider value={chosenType}> */}
                     <ViewFiles />
-                    {/* </fileChosenContext.Provider> */}
-                    {/* LEFT PANE*/}
-                    {/* <GridContainer>
-                      <GridItem xs={12}>
-                        <Card>
-                          <CardHeader color="warning" stats icon>
-                            <CardIcon color="warning">
-                              <Icon>content_copy</Icon>
-                            </CardIcon>
-                            <p className={classes.cardCategory}>Used Space</p>
-                            <h3 className={classes.cardTitle}>
-                              {a}/{b} <small>GB</small>
-                            </h3>
-                          </CardHeader>
-                          <CardFooter stats>
-                            <div className={classes.stats}>
-                              <Danger>
-                                <Warning />
-                              </Danger>
-                              <a
-                                href="#pablo"
-                                onClick={(e) => e.preventDefault()}
-                              >
-                                Get more space
-                              </a>
-                            </div>
-                          </CardFooter>
-                        </Card>
-                      </GridItem>
-                    </GridContainer> */}
                     <RightPane a={a} b={b} title={title} />
                   </div>
                 </PrivateRoute>
@@ -161,10 +124,8 @@ function App() {
                 errorMessage={errorMessage}
                 hideError={updateErrorMessage}
               />
-              {/* </div> */}
             </div>
           </Fragment>
-          {/* </BrowserRouter> */}
         </HashRouter>
       </Router>
     </Provider>

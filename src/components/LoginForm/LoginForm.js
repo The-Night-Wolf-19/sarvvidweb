@@ -139,17 +139,9 @@ function LoginForm(props) {
   };
   return (
     <div className="loginPage">
-      {/* <img className="loginBg" src={loginbg} alt=""></img> */}
       <div className="loginBgColor"></div>
       <img className="loginLogo" src={sarvvid} alt="Sarvvid AI" />
-      {/* <div className="login_form"> */}
-      <QRC
-        // click={handleQRCode}
-        updateTitle={props.updateTitle}
-        history={props.history}
-      />
-      {/* </div> */}
-      {/*  */}
+      <QRC updateTitle={props.updateTitle} history={props.history} />
     </div>
   );
 }

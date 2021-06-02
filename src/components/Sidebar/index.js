@@ -55,13 +55,6 @@ const Sidebar = ({ fileStructure, ...props }) => {
   const classesFileRequest = useFileRequestStyles();
   const [fileHash, setFileHash] = useState("");
   return (
-    // <SideBarContainer toggle={toggle}>
-    //   <ShowMenu onClick={() => handleToggle(!toggle)} />
-    //   <Link to="/" className="rootLink">
-    //     <Root />
-    //   </Link>
-    //   <SideMenu fileStructure={children} />
-    // </SideBarContainer>
     <div
       className="leftContainer"
       onMouseEnter={() => setSideDrawerToggle(true)}
@@ -93,58 +86,8 @@ const Sidebar = ({ fileStructure, ...props }) => {
             </div>
             <div className="leftPane_folders">
               <SideMenu fileStructure={children} />
-              {/* <p>HI</p>
-              <p>HI</p>
-              <p>HI</p>
-              <p>HI</p>
-              <p>HI</p>
-              <p>HI</p>
-              <p>HI</p>
-              <p>HI</p>
-              <p>HI</p>
-              <p>HI</p>
-              <p>HI</p>
-              <p>HI</p>
-              <p>HI</p>
-              <p>HI</p>
-              <p>HI</p> */}
             </div>
-            {/* <div
-              className="leftPane_buttons_button"
-              onMouseEnter={() => setMyFiles(false)}
-              onMouseLeave={() => setMyFiles(true)}
-            >
-              {myFiles ? (
-                <i class="fa fa-folder-o" aria-hidden="true"></i>
-              ) : (
-                <img
-                  className="animated_icon"
-                  width={40}
-                  height={40}
-                  src={myFilesGif}
-                  alt=""
-                />
-              )}
-              &nbsp;My Files
-            </div> */}
-            {/* <div
-              className="leftPane_buttons_button"
-              onMouseEnter={() => setRecentFiles(false)}
-              onMouseLeave={() => setRecentFiles(true)}
-            >
-              {recentFiles ? (
-                <i class="fa fa-folder-open" aria-hidden="true"></i>
-              ) : (
-                <img
-                  className="animated_icon"
-                  width={40}
-                  height={40}
-                  src={recentFilesGif}
-                  alt=""
-                />
-              )}
-              &nbsp;Recent Files
-            </div> */}
+
             <div
               className="leftPane_buttons_button"
               onMouseEnter={() => setSharedFiles(false)}
@@ -214,9 +157,7 @@ const Sidebar = ({ fileStructure, ...props }) => {
               }}
               setEntry={(val) => props.setEntry(val)}
               currentpath={props.match.url}
-              // chooseClick={chooseClick}
               onEnterProgress={() => setSideDrawerToggle(false)}
-              // onMouseLeave={() => setSideDrawerToggle(false)}
             />
           </div>
         </div>
@@ -231,12 +172,7 @@ const Sidebar = ({ fileStructure, ...props }) => {
             <div className="leftPane_buttons_button_short">
               <i class="fa fa-home" aria-hidden="true"></i>
             </div>
-            {/* <div className="leftPane_buttons_button_short">
-              <i class="fa fa-folder-o" aria-hidden="true"></i>
-            </div>
-            <div className="leftPane_buttons_button_short">
-              <i class="fa fa-folder-open" aria-hidden="true"></i>
-            </div> */}
+
             <div className="leftPane_buttons_button_short">
               <i class="fa fa-users" aria-hidden="true"></i>
             </div>
@@ -258,15 +194,12 @@ const Sidebar = ({ fileStructure, ...props }) => {
       <div className="FileRequestModal">
         <Modal
           open={handleFileRequest}
-          // open={true}
           onClose={() => {
-            // setUpgradeCounter(0);
             setHandleFileRequest(!handleFileRequest);
             setSideDrawerToggle(false);
           }}
           aria-labelledby="simple-modal-title"
           aria-describedby="simple-modal-description"
-          // className="upgrade_modal"
         >
           <div className={classesFileRequest.paper}>
             <div className="div_FileRequest_heading">
@@ -308,10 +241,7 @@ const Sidebar = ({ fileStructure, ...props }) => {
 
 const mapStateToProps = (state, ownProps) => {
   const fileStructure = generateTreeFromList(state.fileSystem);
-  // const fileStructure = generateTreeFromList(
-  //   JSON.parse(localStorage.getItem("fileSystem"))
-  // );
-  // console.log("BBBBBBBBBBBBBBBBBBB---->>>>", fileStructure);
+
   const path = ownProps.match.url;
   console.log(
     state.fileSystem[md5(path + FOLDER)].children.map(

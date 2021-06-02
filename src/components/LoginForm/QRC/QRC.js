@@ -86,15 +86,12 @@ const QRC = (props) => {
           clearInterval(loginVar);
           props.updateTitle("Home");
           props.history.push("/");
-          // props.showError(null);
-          // clearTimeout();
         } else {
           console.log("TRYING AGAIN<<<<<<<<<<<<<<");
         }
       });
   }, 3000);
   return (
-    // <Backdrop style={{ zIndex: "4001", opacity: "1", visibility: "visible" }}>
     <div className="login_QR">
       <div className="login_QR_instruction">
         <h3>To use SarvvidBox on your computer:</h3>
@@ -108,26 +105,16 @@ const QRC = (props) => {
       <div className="login_code">
         <QRCode value={Hash} size={200} level={"Q"} />
       </div>
-      {/* <div className="login_QR_close" onClick={props.click}>
-        <CloseIcon fontSize="large" />
-      </div> */}
     </div>
-    // </Backdrop>
   );
 };
 const mapStateToProps = (state, ownProps) => {
   console.log("initial", state.fileSystem);
   const fileStructure = localStorage.getItem("fileSystem");
-  // state.fileSystem = JSON.parse(localStorage.getItem("fileSystem"));
-  // console.log("final", state.fileSystem);
+
   return {
     fileStructure,
   };
 };
-// const mapDispatchToProps =(dispatch)=>{
-//   return{
-
-//   }
-// }
 
 export default connect(mapStateToProps, { setEntry })(QRC);

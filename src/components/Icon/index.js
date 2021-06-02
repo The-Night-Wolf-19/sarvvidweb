@@ -190,7 +190,7 @@ class Icon extends Component {
                       )}&ping=${localStorage.getItem("ping")}`,
                       headers: {
                         Accept: "application/json, text/plain, */*",
-                        Authtoken: localStorage.getItem("authtoken"), // It can be used to overcome cors errors
+                        Authtoken: localStorage.getItem("authtoken"),
                         "Content-Type": "application/json",
                       },
                       responseType: "blob",

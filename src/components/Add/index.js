@@ -11,7 +11,6 @@ function Add(props) {
       onMouseEnter={() => setAddAnim(false)}
       onMouseLeave={() => setAddAnim(true)}
     >
-      {/* <Container onClick={() => handleOpen(true)}>+</Container> */}
       {open ? (
         <CreateNew
           title="Create New"
@@ -20,11 +19,7 @@ function Add(props) {
           currentpath={props.currentpath}
         />
       ) : (
-        <Container
-          onClick={() => handleOpen(true)}
-          // onMouseEnter={() => setAddAnim(false)}
-          // onMouseLeave={() => setAddAnim(true)}
-        >
+        <Container onClick={() => handleOpen(true)}>
           {addAnim ? (
             "+"
           ) : (
@@ -66,11 +61,6 @@ const Adder = styled.div`
     box-shadow: 0 0 20px rgb(0, 195, 255);
   }
 `;
-// const Adder = styled.div`
-//   width: 15%;
-//   min-width: 15%;
-//   max-width: 15%;
-// `;
 const Container = styled.div`
   height: 94%;
   width: 98%;

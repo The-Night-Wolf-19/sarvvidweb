@@ -321,10 +321,7 @@ export default function CustomizedMenus(props) {
         style={{ height: "60px", borderRadius: "60px", outline: "none" }}
       >
         {props.btnSize === "short" ? "" : <span>Create New&nbsp;</span>}
-        <AddIcon
-          // fontSize="medium"
-          style={{ color: "#00b3ff", fontSize: "30px" }}
-        />
+        <AddIcon style={{ color: "#00b3ff", fontSize: "30px" }} />
       </Button>
       <StyledMenu
         id="customized-menu"
@@ -333,32 +330,13 @@ export default function CustomizedMenus(props) {
         open={Boolean(anchorEl)}
         onClose={handleClose}
         onClick={(e) => {
-          // if(openCreateModal.type==="None")
-          // e.stopPropagation();
           handleClose();
         }}
       >
-        {/* <div
-          {...getRootProps({
-            className: "dropzone",
-            // noDragEventsBubbling: true,
-          })}
-        > */}
-        <StyledMenuItem
-          // onMouseEnter={() => {
-          //   setOpenCreateModal({ open: true, type: "File" });
-          // }}
-          // onMouseLeave={() => {
-          //   setOpenCreateModal({ open: false, type: "None" });
-          // }}
-          style={{ width: "min-content", margin: "0%" }}
-        >
-          {/* {openCreateModal.open === true && openCreateModal.type === "File" ? ( */}
+        <StyledMenuItem style={{ width: "min-content", margin: "0%" }}>
           <label
             htmlFor="filePicker"
             style={{
-              // background: "grey",
-              // padding: "5px 10px",
               display: "flex",
               flexDirection: "row",
               marginBottom: "0",
@@ -375,31 +353,12 @@ export default function CustomizedMenus(props) {
             type="file"
             onChange={onFileChange}
           />
-          {/* ) : ( */}
-          {/* "" */}
-          {/* )} */}
-          {/* <ListItemIcon>
-            <InsertDriveFileIcon fontSize="small" />
-          </ListItemIcon>
-          <ListItemText primary="Upload File" /> */}
         </StyledMenuItem>
 
-        <StyledMenuItem
-          // onMouseEnter={() => {
-          //   setOpenCreateModal({ open: true, type: "Folder" });
-          // }}
-          // onMouseLeave={() => {
-          //   setOpenCreateModal({ open: false, type: "None" });
-          // }}
-          style={{ width: "min-content", margin: "0%" }}
-        >
-          {/* {openCreateModal.open === true &&
-          openCreateModal.type === "Folder" ? ( */}
+        <StyledMenuItem style={{ width: "min-content", margin: "0%" }}>
           <label
             htmlFor="folderPicker"
             style={{
-              // background: "grey",
-              // padding: "5px 10px",
               display: "flex",
               flexDirection: "row",
               marginBottom: "0",
@@ -411,53 +370,21 @@ export default function CustomizedMenus(props) {
             <ListItemText primary="Upload Folder" />
           </label>
           <input
-            // {...getInputProps()}
             directory=""
             webkitdirectory=""
             id="folderPicker"
             type="file"
             style={{ visibility: "hidden", width: "0%" }}
             onChange={(event) => {
-              // Update the state
               console.log("ALLL FILES>>>>>>>>>>>>>>>", event.target.files);
               console.log(event.target.files[0].webkitRelativePath);
-
-              // if (event.target.files.length > 0)
-              //   setOpenCreateModal({
-              //     open: true,
-              //     type: "None",
-              //   });
 
               selectedfiles(event.target.files);
               console.log(files);
             }}
           />
-          {/* ) : (
-            ""
-          )} */}
         </StyledMenuItem>
-        {/* </div> */}
-        {/* <StyledMenuItem>
-          <ListItemIcon>
-            <CreateNewFolderIcon fontSize="small" />
-          </ListItemIcon>
-          <ListItemText primary="New Folder" />
-        </StyledMenuItem> */}
       </StyledMenu>
-      {/* {files.length > 0 ? setOpenCreateModal({ open: true, type: "None" }) : ""} */}
-      {/* {openCreateModal.open ? (
-        <CreateModal
-          open={openCreateModal.open}
-          type={openCreateModal.type}
-          title="Create New"
-          files={files}
-          closeFn={() => setOpenCreateModal({ open: false, type: "None" })}
-          addEntry={(value) => props.saveEntry(value)}
-          currentpath={props.currentpath}
-        />
-      ) : (
-        " "
-      )} */}
       <CreateModal
         hover={() => props.onEnterProgress()}
         files={fileUploading}
@@ -467,7 +394,7 @@ export default function CustomizedMenus(props) {
 }
 async function myCustomFileGetter(event) {
   const files = [];
-  // Retrieves the files loaded by the drag event or the select event
+
   const fileList = event.dataTransfer
     ? event.dataTransfer.files
     : event.target.files;
@@ -477,6 +404,5 @@ async function myCustomFileGetter(event) {
     files.push(file);
   }
 
-  // files returned from this function will be acceptedFiles
   return files;
 }

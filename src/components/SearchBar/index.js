@@ -56,26 +56,8 @@ class SearchBar extends Component {
             onChange={(event) =>
               this.setState({ term: event.target.value.toLowerCase() })
             }
-            // value={this.state.term}
           />
         </form>
-        {/* <Search>
-          <Input placeholder="Search for anything" ref={this._ref}>
-            <MagnifyIcon
-              fill="#545B61"
-              style={{
-                position: "absolute",
-                pointerEvents: "none",
-                left: 9,
-                marginTop: 5,
-              }}
-              size={15}
-            />
-            <input
-              placeholder="Search for Anything"
-              value={this.state.term}
-              onChange={(event) => this.setState({ term: event.target.value })}
-            /> */}
         {this.state.term.length > 0 ? (
           <Container style={{ width: "35%" }}>
             <Filter mode={this.state.mode} handleMode={this.handleMode} />
@@ -97,8 +79,6 @@ class SearchBar extends Component {
         ) : (
           ""
         )}
-        {/* </Input> 
-        </Search> */}
       </div>
     );
   }
